@@ -6,15 +6,22 @@ namespace Week8
         static void Main(string[] args)
         {
             var lettr = new Letter("0", 0.1);
-            lettr.PrintInfo();
-            Console.WriteLine(lettr.CalulateCost());
             var prcl = new Parcel("1", 2.2, "10x10x10");
+            var parcel = new Parcel("2", 6.7, "67x10x20");
+            //1
+            lettr.PrintInfo();
             prcl.PrintInfo();
-            Console.WriteLine(prcl.CalulateCost());
-            var crgo = new CargoContainer<DeliveryItem>();
-            crgo.AddItem(lettr);
-            crgo.AddItem(prcl);
-            Console.WriteLine(crgo.GetTotalCost());
+            //2
+            
+            CargoContainer<DeliveryItem> myCargo = new CargoContainer<DeliveryItem>();
+            //3
+            
+            myCargo.AddItem(lettr);
+            myCargo.AddItem(prcl);
+            myCargo.AddItem(parcel);
+            //4
+            Console.WriteLine(myCargo.GetTotalCost());
+            //5
         }
     }
 }
